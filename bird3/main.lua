@@ -8,9 +8,9 @@
     Author: Colton Ogden
     cogden@cs50.harvard.edu
 
-    A mobile game by Dong Nguyen that went viral in 2013, utilizing a very simple 
-    but effective gameplay mechanic of avoiding pipes indefinitely by just tapping 
-    the screen, making the player's bird avatar flap its wings and move upwards slightly. 
+    A mobile game by Dong Nguyen that went viral in 2013, utilizing a very simple
+    but effective gameplay mechanic of avoiding pipes indefinitely by just tapping
+    the screen, making the player's bird avatar flap its wings and move upwards slightly.
     A variant of popular games like "Helicopter Game" that floated around the internet
     for years prior. Illustrates some of the most basic procedural generation of game
     levels possible as by having pipes stick out of the ground by varying amounts, acting
@@ -79,11 +79,11 @@ end
 
 function love.update(dt)
     -- scroll background by preset speed * dt, looping back to 0 after the looping point
-    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) 
+    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt)
         % BACKGROUND_LOOPING_POINT
 
     -- scroll ground by preset speed * dt, looping back to 0 after the screen width passes
-    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) 
+    groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt)
         % VIRTUAL_WIDTH
 
     bird:update(dt)
@@ -101,6 +101,6 @@ function love.draw()
 
     -- render our bird to the screen using its own render logic
     bird:render()
-    
+
     push:finish()
 end

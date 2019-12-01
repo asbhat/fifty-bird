@@ -11,6 +11,7 @@
 Bird = Class{}
 
 local GRAVITY = 20
+local JUMP_BUTTON = 'space'
 
 function Bird:init()
     -- load bird image from disk and assign its width and height
@@ -31,7 +32,7 @@ function Bird:update(dt)
     self.dy = self.dy + GRAVITY * dt
 
     -- add a sudden burst of negative gravity if we hit space
-    if love.keyboard.wasPressed('space') then
+    if love.keyboard.wasPressed(JUMP_BUTTON) then
         self.dy = -5
     end
 

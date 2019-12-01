@@ -31,12 +31,13 @@ end
     global pipe width and height values.
 ]]
 function Bird:collides(pipe)
+    local pixelOffset = 2
     -- the 2's are left and top offsets
     -- the 4's are right and bottom offsets
     -- both offsets are used to shrink the bounding box to give the player
     -- a little bit of leeway with the collision
-    if (self.x + 2) + (self.width - 4) >= pipe.x and self.x + 2 <= pipe.x + PIPE_WIDTH then
-        if (self.y + 2) + (self.height - 4) >= pipe.y and self.y + 2 <= pipe.y + PIPE_HEIGHT then
+    if (self.x + pixelOffset) + (self.width - pixelOffset * 2) >= pipe.x and self.x + pixelOffset <= pipe.x + pipe.width then
+        if (self.y + pixelOffset) + (self.height - pixelOffset * 2) >= pipe.y and self.y + pixelOffset <= pipe.y + pipe.height then
             return true
         end
     end
