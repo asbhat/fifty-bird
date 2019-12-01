@@ -1,6 +1,6 @@
 --[[
     TitleScreenState Class
-    
+
     Author: Colton Ogden
     cogden@cs50.harvard.edu
 
@@ -15,7 +15,7 @@ function TitleScreenState:init()
 end
 
 function TitleScreenState:update(dt)
-    if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
+    if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') or love.mouse.wasPressed(1) then
         gStateMachine:change('countdown')
     end
 end
